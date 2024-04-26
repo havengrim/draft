@@ -1,24 +1,26 @@
-import { useState } from 'react'
-import './App.css'
-import { Dropdown } from 'primereact/dropdown';
-
+import React from 'react';
+import './index.css';
+import CarouselWithNavbar from './components/CarouselWithNavbar';
+import { Button } from './components/ui/button';
+import Details from './components/Details';
+import Giving from './components/Giving';
+import Sermon from './components/Sermon';
+import Email from './components/Email';
+import Event from './components/Event';
+import Footer from './components/Footer';
 
 function App() {
-  const [selectedCity, setSelectedCity] = useState(null);
-    const cities = [
-        { name: 'New York', code: 'NY' },
-        { name: 'Rome', code: 'RM' },
-        { name: 'London', code: 'LDN' },
-        { name: 'Istanbul', code: 'IST' },
-        { name: 'Paris', code: 'PRS' }
-    ];
-
-    return (
-        <div className="card flex justify-content-center">
-            <Dropdown value={selectedCity} onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
-                placeholder="Select a City" className="w-full md:w-14rem" />
-        </div>
-    )
+  return (
+    <div className=''>
+        <CarouselWithNavbar />
+        <Details />
+        <Giving />
+        <Sermon />
+        <Email />
+        <Event />
+        <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
